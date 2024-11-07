@@ -1,1 +1,17 @@
+## WHO ARE THE USERS AND THEIR BACKGROUND
+This tool will be applicable to those with a background in biochemistry, specifically those in the fields of muscle biology research.
+  - This applies to both cardiac and skeletal muscle specialists. 
+  - Users are interested in using this as a predictive model of how alterations in biochemical mechanisms/parameters 
+    (perhaps due to mutations) can reflect in 2D visualization
+
+## WHAT INFORMATION USERS WANT FROM TOOL
+This tool can help probe how changes in protein concentration/ availability, equilibrium rates, and ATP can create response rates.
+  - This could be used in parallel with clinical data in hopes of response curves matching with disease phenotypes 
+    for ex// hypercontractility would perhaps show slower myosin release (larger slope)
+The calculated rate over a short time period (on the scale of milliseconds - seconds)
+
+## USE CASES
+- Calculates the slopes in varying enzymatic reactions with differing concentrations over time
+- Creates a 2 2-dimensional plot for each specialized parameter model run. This can be done by altering constants and pushing 
+  concentrations togetherr
 
