@@ -1,1 +1,3 @@
-
+- NumPy to calculate numerical derivatives.
+- MATplotlib to visualize the slope alongside or on top of the rate response curve for easy comparison
+- 
