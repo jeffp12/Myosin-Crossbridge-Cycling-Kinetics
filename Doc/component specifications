@@ -14,5 +14,5 @@ The calculated rate over a short time period (on the scale of milliseconds - sec
 - Calculates the slopes in varying enzymatic reactions with differing concentrations over time
 - Create a dose-response curve for myosin targeted therapies that effect myosin activation, constant rates, etc. 
 - Creates a 2 2-dimensional plot for each specialized parameter model run. This can be done by altering constants and pushing 
-  concentrations togetherr
+  concentrations together.
 
