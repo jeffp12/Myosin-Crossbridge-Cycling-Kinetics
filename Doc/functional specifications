@@ -1,18 +1,1 @@
-Background:
-As mentioned in the project description, the biochemical and biomechanical process of cross-bridge cycling is essential for mammalian life. 
-Mutations in sarcomeric protein disrupt this cycle in different aspects and I am curious to see if I can create a visualization to capture 
-the differences this causes in enzyme kinetics with and without treatment. 
 
-This will require me to accomplish the following aims:
-
-1) I will create and tailor a mathematical model that drives cross-bridge kinetics. This will be done by adapting established equations published
-in the field. Additionally, my mathematical model will follow human-derived kinetics. This portion of the program will be made to be easily
-adjusted by the audience to match their desired experimental conditions. This will be done using Tellerium to outline the kinetics and Numpy
-to calculate numerical derivatives.
-
-2) This aim focuses on visualization production of the crossbridge cycling kinetics. My aim is to make this graph, at the very least, an
-informative 2D image with hopes of making it interactive. 
-
-3) Lastly, as my research also adopts a translational aspect, I wanted this program to have a predictive modeling nature. I would like this to 
-process, graph, and then report the significant changes when drug treatment is applied. This will be done using MATplotlib to visualize the 
-slope alongside or on top of the rate response curve for easy comparison.
