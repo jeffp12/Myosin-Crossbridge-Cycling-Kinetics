@@ -251,3 +251,29 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
         "NewCB0": NewCB0, "NewCB1": NewCB1, "NewCB2": NewCB2, "NewCB3": NewCB3, "NewCB4": NewCB4, "NewCB5": NewCB5, "NewCB6": NewCB6,
         "NewerCB0": NewerCB0, "NewerCB1": NewerCB1, "NewerCB2": NewerCB2, "NewerCB3": NewerCB3, "NewerCB4": NewerCB4, "NewerCB5": NewerCB5, "NewerCB6": NewerCB6,
         },
+
+
+# example of how to run it and also set up for plot comparison and percent change
+myosinCK(1.67,["ik2"], [.4])
+time = results[0]["time"]
+CB0 = results[0]["CB0"] 
+CB1 = results[0]["CB1"]
+CB2 = results[0]["CB2"]
+CB3 = results[0]["CB3"]
+CB4 = results[0]["CB4"]
+CB5 = results[0]["CB5"]
+CB6 = results[0]["CB6"]
+NewCB0 = results[0]["NewCB0"]
+NewCB1 = results[0]["NewCB1"]
+NewCB2 = results[0]["NewCB2"]
+NewCB3 = results[0]["NewCB3"]
+NewCB4 = results[0]["NewCB4"]
+NewCB5 = results[0]["NewCB5"]
+NewCB6 = results[0]["NewCB6"]
+NewerCB0 = results[0]["NewerCB0"]
+NewerCB1 = results[0]["NewerCB1"]
+NewerCB2 = results[0]["NewerCB2"]
+NewerCB3 = results[0]["NewerCB3"]   
+NewerCB4 = results[0]["NewerCB4"]
+NewerCB5 = results[0]["NewerCB5"]
+NewerCB6 = results[0]["NewerCB6"]
