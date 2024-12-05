@@ -250,7 +250,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
         "CB0": CB0, "CB1": CB1, "CB2": CB2, "CB3": CB3, "CB4": CB4, "CB5": CB5, "CB6": CB6,
         "NewCB0": NewCB0, "NewCB1": NewCB1, "NewCB2": NewCB2, "NewCB3": NewCB3, "NewCB4": NewCB4, "NewCB5": NewCB5, "NewCB6": NewCB6,
         "NewerCB0": NewerCB0, "NewerCB1": NewerCB1, "NewerCB2": NewerCB2, "NewerCB3": NewerCB3, "NewerCB4": NewerCB4, "NewerCB5": NewerCB5, "NewerCB6": NewerCB6,
-        },
+        }
 
 
 # example of how to run it and also set up for plot comparison and percent change
