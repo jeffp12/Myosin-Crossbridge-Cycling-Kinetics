@@ -9,7 +9,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/jeffp12/Myosin-Crossbridge-Cycling-Kinetics",  # Link to your repo
-    download_url = "https://github.com/jeffp12/Myosin-Crossbridge-Cycling-Kinetics/archive/refs/tags/jeffp12.tar.gz",
+    download_url = "https://github.com/jeffp12/Myosin-Crossbridge-Cycling-Kinetics/archive/refs/tags/jeffp12uw.tar.gz",
     packages=find_packages(),            # Automatically find packages
     install_requires=[
         "numpy>=1.21.0",
