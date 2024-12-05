@@ -27,8 +27,8 @@ def calculate_and_plot_percent_changes(wildtype, perturbed, cb_labels):
 
 
 # ex// of how to run it 
-wildtype = np.array([CB0, CB1, CB2, CB3, CB4, CB5, CB6])
-perturbed = np.array([NewCB0, NewCB1, NewCB2, NewCB3, NewCB4, NewCB5, NewCB6])
-cb_labels = ['CB0', 'CB1', 'CB2', 'CB3', 'CB4', 'CB5', 'CB6']
+#wildtype = np.array([CB0, CB1, CB2, CB3, CB4, CB5, CB6])
+#perturbed = np.array([NewCB0, NewCB1, NewCB2, NewCB3, NewCB4, NewCB5, NewCB6])
+#cb_labels = ['CB0', 'CB1', 'CB2', 'CB3', 'CB4', 'CB5', 'CB6']
 
-percent_changes = calculate_and_plot_percent_changes(wildtype, perturbed, cb_labels)
+#percent_changes = calculate_and_plot_percent_changes(wildtype, perturbed, cb_labels)
