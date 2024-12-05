@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="MyosinCK",                 
-    version="0.1.2",                   
+    version="0.1.1",                   
     author="Jeffrey Pham",
     author_email="jeffp12@uw.edu",
     description="The goal of this program is to establish a visualization tool tailored to describing cardiac-specific muscle dynamics and how the alterations of parameters mentioned above (due to disease mutations) can impact the efficiency of muscle dynamics.",
