@@ -1,0 +1,48 @@
+# The cardiac crossbridge cycling has many products, reactants, enzymatic rates, and an overall overwhleming kinetics. 
+# Here I wanted to make a legend and key of sorts to outline what each varibale means so that when users interact with my code, it would be more user friendly.
+
+# CB stands for CrossBridge to make the variables more related to the cycling.
+  # k stands for the reaction rate constants
+  # This is a key to help define the diffferent states of the actiomyosin crossbridge cycling.
+
+  # CB0 = MYOSIN + ATP / MYOSIN w ADP + Pi.
+    # The state where ATP is bound and is hydrolyzed into ADP + Pi
+  # k1 = MYOSIN + ATP / MYOSIN w ADP + Pi -> COCKED MYOSIN w ADP + Pi.
+    # the biochemcial forward rate constant of this reaction where myosin mechnically changes to cocked position
+  # k10 = the reverse rate constant of this reaction
+
+  # CB1 = COCKED MYOSIN w ADP + Pi
+    # The state where myosin is in the cocked position
+  # k2 = COCKED MYOSIN w ADP + Pi -> ACTOMYOSIN COMPlEX w ADP + Pi.
+    # the biochemcial forward rate constant of this reaction where actin interacts with myosin and creates the actomyosin complex
+  # k20 = the reverse rate constant of this reaction
+
+  # CB2 = ACTOMYOSIN COMPlEX w ADP + Pi
+    # The state where actin and myosin leads to the actomyosin complex.
+  # k3 = ACTOMYOSIN COMPlEX w ADP + Pi -> ACTOMYOSIN COMPlEX w ADP
+    # the biochemcial forward rate constant of this reaction where inorganic phosphate is released correspondeds with the start of the myosin power stroke
+  # k30 = the reverse rate constant of this reaction
+
+  # CB3 = PRE ACTOMYOSIN COMPlEX w ADP
+    # This is when ADP is released causing the "power stroke" (PS). This is also known as the rigor state when ADP released casuses stronger actin myosin binding
+  # k4 = PRE ACTOMYOSIN COMPlEX w ADP -> POST ACTOMYOSIN COMPlEX w ADP
+    # the biochemcial forward rate constant of this reaction pre and post power stroke of chemically indistinguishable states
+  # k40 = the reverse rate constant of this reaction
+
+  # CB4 = POST ACTOMYOSIN COMPlEX w ADP
+    # The state of the ACTOMYOSIN COMPlEX w ADP after the power stroke
+  # k5 = POST ACTOMYOSIN COMPlEX w ADP -> ISO ACTOMYOSIN COMPlEX w ADP
+    # the biochemcial forward rate constant of this reaction for an isomerization step
+  # k50 = the reverse rate constant of this reaction
+
+  # CB5 = ISO ACTOMYOSIN COMPlEX w ADP
+    # The state of the actomyosin complex after an isomerization step
+  # k6 = ISO ACTOMYOSIN COMPlEX w ADP -> ACTOMYOSIN COMPlEX
+    # the biochemcial forward rate constant of this reaction where ADP is released
+  # k60 = the reverse rate constant of this reaction
+
+  # CB6 = ACTOMYOSIN COMPlEX
+    # The state of the actomyosin complex post power stroke
+  # k7 = ISO ACTOMYOSIN COMPlEX w ADP -> ACTOMYOSIN COMPlEX
+    # the biochemcial forward rate constant of this reaction where ATP binds causing Actomyosin complex dissociation
+  # k70 = the reverse rate constant of this reaction
