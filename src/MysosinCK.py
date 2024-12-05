@@ -254,7 +254,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
 
 
 # example of how to run it and also set up for plot comparison and percent change
-result = myosinCK(1.67,["ik2"], [.4])
+results = myosinCK(1.67,["ik2"], [.4])
 time = results["time"] 
 CB0 = results["CB0"] 
 CB1 = results["CB1"]
