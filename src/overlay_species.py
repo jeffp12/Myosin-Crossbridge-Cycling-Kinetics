@@ -14,4 +14,4 @@ def plot_overlay_three(a,b,c,d,x,y,z,e,f,g):
   return
   
 # ex of how to run function
-plot_overlay_three(time, CB1, '[COCKED MYOSIN w ADP + Pi]', '--', NewCB1, '[PRE ACTOMYOSIN COMPlEX w ADP] w R403Q', ':', NewerCB1, '[COCKED MYOSIN w ADP + Pi] w S532P', '-.')
+#plot_overlay_three(time, CB1, '[COCKED MYOSIN w ADP + Pi]', '--', NewCB1, '[PRE ACTOMYOSIN COMPlEX w ADP] w R403Q', ':', NewerCB1, '[COCKED MYOSIN w ADP + Pi] w S532P', '-.')
