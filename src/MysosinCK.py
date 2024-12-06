@@ -10,9 +10,11 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   # This is the complete cardiac myosin function that produces wildtype and mutated graph outputs
   # The first part simulates the wildtype control
   # The following part of the code will then allow users to apply parameter changes that effect species concentration
+  # multiplier is a float, selected_rate_constants are lists, and rate_multipliers are list of the same value
   # The following part will then allow users to select any rate constant of the biochemcial process and alter it as well
+  # For any variable/ naming convention, please refer to my Varaible Doc!!
 
-  r = te.loada('''
+  MODEL= te.loada('''
       # Reactions
           J0: CB0 -> CB1; (k1 * CB0 + k20 * CB2 - (k10 + k2) * CB1);
           J1: CB1 -> CB2; (k2 * CB1 + k30 * CB3 - (k20 + k3) * CB2);
@@ -42,7 +44,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
       ''')
 
       # Simulate the model
-  result = r.simulate(0, 0.3, 500)
+  result = MODEL.simulate(0, 0.3, 500)
   time = result[:, 0]
 
       # Extract CB species
@@ -71,7 +73,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   plt.legend()
   plt.tight_layout()
   plt.show()
-  
+
 
   # This code manipulates the intial conditions of CB0 and compensates the rest of the reactants accordingly. However, any reactant can be manipulated but you would just need to adjust the code accordingly to which reactant is being initally changed.
   # Initial conditions from WT cardiac CB cycling
@@ -102,7 +104,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
 
   # After the scaling factor calculations, now users can simulate this reaction with adjusted concentrations
 
-  r = te.loada(f'''
+  MODEL= te.loada(f'''
   # Reactions
       J0: NewCB0 -> NewCB1; (k1 * NewCB0 + k20 * NewCB2 - (k10 + k2) * NewCB1);
       J1: NewCB1 -> NewCB2; (k2 * NewCB1 + k30 * NewCB3 - (k20 + k3) * NewCB2);
@@ -132,7 +134,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   ''')
 
   # Simulate the model
-  result = r.simulate(0, 0.3, 500)
+  result = MODEL.simulate(0, 0.3, 500)
   time = result[:, 0]
 
   # Extract CB species
@@ -145,11 +147,11 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   NewCB6 = result[:, 7]
 
   # Plot species altering kinetics (for my case R403Q)
-  plt.figure(figsize=(9, 7)) 
+  plt.figure(figsize=(9, 7))
   plt.xlabel('Time')
   plt.ylabel('% Concentration')
   plt.title('Product Dynamics of CrossBridge States with R403Q mutated species concentrations')
-  plt.xlim(0, 0.3) 
+  plt.xlim(0, 0.3)
   plt.grid(True)
   plt.plot(time, NewCB0, label='[MYOSIN + ATP / MYOSIN w ADP + Pi]', linestyle='-')
   plt.plot(time, NewCB1, label='[COCKED MYOSIN w ADP + Pi]', linestyle='--')
@@ -161,7 +163,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   plt.legend()
   plt.tight_layout()
   plt.show()
-   
+
 
   # This part of the code accounts for pertubajens that effect rate constants
   rate_constants = {
@@ -175,14 +177,14 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   }
 
   # This for loop iterates through the dictionary and see if there is a multiplier that needs to be applied
-  # Then prints out the updated rates and manually puts it into tellerium simulation 
+  # Then prints out the updated rates and manually puts it into tellerium simulation
 
   for rate_constant, rate_multipliers in zip(selected_rate_constants, rate_multipliers):
       if rate_constant in rate_constants:
           rate_constants[rate_constant] *= rate_multipliers
           print(f"Updated {rate_constant}: {rate_constants[rate_constant]}")
 
-  r = te.loada(f'''
+  MODEL= te.loada(f'''
   # Reactions
       J0: NewerCB0 -> NewerCB1; (ik1 * NewerCB0 + ik20 * NewerCB2 - (ik10 + ik2) * NewerCB1);
       J1: NewerCB1 -> NewerCB2; (ik2 * NewerCB1 + ik30 * NewerCB3 - (ik20 + ik3) * NewerCB2);
@@ -213,7 +215,7 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   )
 
   # Simulate the model
-  result = r.simulate(0, 0.3, 500)
+  result = MODEL.simulate(0, 0.3, 500)
   time = result[:, 0]
 
   # Extract CB species
@@ -243,7 +245,6 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
   plt.legend()
   plt.tight_layout()
   plt.show()
-  
 
   return {
         "time": time,
@@ -251,29 +252,3 @@ def myosinCK(multiplier,selected_rate_constants, rate_multipliers):
         "NewCB0": NewCB0, "NewCB1": NewCB1, "NewCB2": NewCB2, "NewCB3": NewCB3, "NewCB4": NewCB4, "NewCB5": NewCB5, "NewCB6": NewCB6,
         "NewerCB0": NewerCB0, "NewerCB1": NewerCB1, "NewerCB2": NewerCB2, "NewerCB3": NewerCB3, "NewerCB4": NewerCB4, "NewerCB5": NewerCB5, "NewerCB6": NewerCB6,
         }
-
-
-# example of how to run it and also set up for plot comparison and percent change
-#results = myosinCK(1.67,["ik2"], [.4])
-#time = results["time"] 
-#CB0 = results["CB0"] 
-#CB1 = results["CB1"]
-#CB2 = results["CB2"]
-#CB3 = results["CB3"]
-#CB4 = results["CB4"]
-#CB5 = results["CB5"]
-#CB6 = results["CB6"]
-#NewCB0 = results["NewCB0"]
-#NewCB1 = results["NewCB1"]
-#NewCB2 = results["NewCB2"]
-#NewCB3 = results["NewCB3"]
-#NewCB4 = results["NewCB4"]
-#NewCB5 = results["NewCB5"]
-#NewCB6 = results["NewCB6"]
-#NewerCB0 = results["NewerCB0"]
-#NewerCB1 = results["NewerCB1"]
-#NewerCB2 = results["NewerCB2"]
-#NewerCB3 = results["NewerCB3"]   
-#NewerCB4 = results["NewerCB4"]
-#NewerCB5 = results["NewerCB5"]
-#NewerCB6 = results["NewerCB6"]
